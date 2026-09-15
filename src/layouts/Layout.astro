@@ -10,6 +10,16 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-QSVG1Y51HB"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QSVG1Y51HB');
+    </script>
+
     <title>{title} · Virgil Digital</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={`${title} · Virgil Digital`} />
