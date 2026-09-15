@@ -86,7 +86,10 @@ const { title, description } = Astro.props;
   footer { background:var(--ink); color:#fff; padding:2rem 6%; margin-top:4rem; }
   .foot-wrap { max-width:1000px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; font-size:0.85rem; opacity:0.75; }
   @media (max-width:640px) {
-    .nav-links { gap:1rem; }
-    .nav-links a:not(.nav-cta) { display:none; }
+    nav.top { padding:0.9rem 5%; }
+    .nav-links { gap:0.9rem; }
+    .nav-links a { font-size:0.85rem; }
+    .nav-cta { padding:0.5rem 0.8rem; font-size:0.8rem; }
+    .brand { font-size:0.9rem; }
   }
 </style>
