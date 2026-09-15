@@ -6,5 +6,179 @@ import Layout from '../layouts/Layout.astro';
   <h1>Let's <span class="accent">talk</span>.</h1>
   <p class="lede">Free 15-minute audit. No pressure, no obligation.</p>
   <p>Tell me what you've got and I'll tell you honestly what's worth fixing — and what isn't.</p>
-  <a href="mailto:hello@virgildigital.co.uk" class="btn">Email hello@virgildigital.co.uk</a>
+
+  <form id="enquiry-form" class="enquiry-form">
+    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="access_key" value="2aaa249a-c2ee-4afe-9713-0fcf73410e55" />
+    <input type="hidden" name="subject" value="New enquiry — Virgil Digital website" />
+    <input type="hidden" name="from_name" value="Virgil Digital website" />
+
+    <div class="form-row">
+      <div class="field">
+        <label for="ef-name">Name</label>
+        <input id="ef-name" type="text" name="name" required />
+      </div>
+      <div class="field">
+        <label for="ef-email">Email</label>
+        <input id="ef-email" type="email" name="email" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="ef-business">Business name</label>
+        <input id="ef-business" type="text" name="business" />
+      </div>
+      <div class="field">
+        <label for="ef-need">What do you need?</label>
+        <select id="ef-need" name="need">
+          <option value="Website + Google Business Profile">Website + Google Business Profile</option>
+          <option value="Website only">Website only</option>
+          <option value="Fix what I've got">Fix what I've got</option>
+          <option value="Ongoing care">Ongoing care</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="ef-message">Tell me what you've got</label>
+      <textarea id="ef-message" name="message" rows="4" required placeholder="e.g. No website yet, or my current site looks outdated and I'm not showing up on Google"></textarea>
+    </div>
+
+    <button type="submit" class="btn" id="ef-submit">Send enquiry</button>
+    <p class="form-status" id="ef-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <p style="margin-top: 2rem;">Prefer email? <a href="mailto:hello@virgildigital.co.uk">hello@virgildigital.co.uk</a></p>
 </Layout>
+
+<style>
+  .enquiry-form {
+    max-width: 700px;
+    margin: 2rem 0 0;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .field {
+    margin-bottom: 1.25rem;
+  }
+  .field label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 0.4rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.98rem;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.65rem 0.8rem;
+    transition: border-color 0.2s;
+  }
+  .field textarea {
+    resize: vertical;
+    min-height: 6rem;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .enquiry-form button[type='submit'] {
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .enquiry-form button[type='submit']:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .form-status {
+    margin: 1rem 0 0;
+    font-size: 0.92rem;
+    max-width: none;
+  }
+  .form-status.success {
+    color: #2f6f3e;
+  }
+  .form-status.error {
+    color: #a3312a;
+  }
+  @media (max-width: 720px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('enquiry-form') as HTMLFormElement | null;
+  const status = document.getElementById('ef-status');
+  const submitBtn = document.getElementById('ef-submit') as HTMLButtonElement | null;
+
+  if (form && status && submitBtn) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const honeypot = form.querySelector('input[name="botcheck"]') as HTMLInputElement | null;
+      if (honeypot && honeypot.checked) {
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      status.textContent = '';
+      status.className = 'form-status';
+
+      try {
+        const formData = new FormData(form);
+        const object: Record<string, string> = {};
+        formData.forEach((value, key) => {
+          object[key] = value.toString();
+        });
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(object),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          status.textContent = "Thank you — your enquiry has been sent. I'll get back to you shortly.";
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          status.textContent = "Something went wrong sending that. Please try again, or email hello@virgildigital.co.uk directly.";
+          status.className = 'form-status error';
+        }
+      } catch (err) {
+        status.textContent = "Something went wrong sending that. Please try again, or email hello@virgildigital.co.uk directly.";
+        status.className = 'form-status error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send enquiry';
+      }
+    });
+  }
+</script>
