@@ -209,6 +209,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     max-width:680px;
     margin-bottom:1rem;
   }
+    .sr-only {
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
 
   .lede {
     font-size:1.2rem;
