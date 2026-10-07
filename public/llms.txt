@@ -1,0 +1,15 @@
+# Virgil Digital
+
+> Websites and Google Business Profile setup for small businesses in Bristol and the South West UK. Fixed prices, one person doing the work, direct contact. Free 15-minute audit.
+
+## Pages
+
+- [Home](https://virgildigital.co.uk/): what Virgil Digital does and who it is for
+- [Services and pricing](https://virgildigital.co.uk/services/): packages and fixed prices
+- [About](https://virgildigital.co.uk/about/): Virgil Pais, DMI Certified Digital Marketing Diploma, based in Bristol
+- [Contact](https://virgildigital.co.uk/contact/): enquiry form and free audit booking
+
+## Work
+
+- [Alterations by Nicole](https://alterationsbynicole.com): tailoring studio in Emersons Green, Bristol
+- [Mealwright](https://mealwright.co.uk): meal-planning app website
