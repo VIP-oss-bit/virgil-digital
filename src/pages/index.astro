@@ -124,6 +124,6 @@ import Layout from '../layouts/Layout.astro';
     dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
   };
   if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 2400);
+    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 1500);
   }
 </script>
