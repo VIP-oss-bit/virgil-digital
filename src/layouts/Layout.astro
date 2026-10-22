@@ -389,8 +389,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       font-size:0.85rem;
     }
 
-    .nav-links a:not(.nav-cta) {
-      display:none;
+    .nav-links {
+      gap:0.65rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .nav-cta {
