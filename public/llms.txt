@@ -8,8 +8,11 @@
 - [Services and pricing](https://virgildigital.co.uk/services/): packages and fixed prices
 - [About](https://virgildigital.co.uk/about/): Virgil Pais, DMI Certified Digital Marketing Diploma, based in Bristol
 - [Contact](https://virgildigital.co.uk/contact/): enquiry form and free audit booking
+- [Work](https://virgildigital.co.uk/work/): selected client websites and products
 
 ## Work
 
 - [Alterations by Nicole](https://alterationsbynicole.com): tailoring studio in Emersons Green, Bristol
 - [Mealwright](https://mealwright.co.uk): meal-planning app website
+- [Marvel Desserts](https://marveldesserts.co.uk): first website for a Bristol dessert business; currently in maintenance while updates are made
+- [StaySafe Guide](https://staysafeguide.com): online safety publication built and maintained by Virgil
