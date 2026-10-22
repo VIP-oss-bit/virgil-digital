@@ -1,11 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Websites, Google presence and marketing for South West UK businesses" description="Get found. Get more customers. Websites and Google presence built by someone who actually answers the phone.">
-  <span class="kicker">South West UK · Websites &amp; Google Presence</span>
-  <h1>Most local businesses lose customers online <span class="accent">before they even compete.</span></h1>
-  <p class="lede">No website, an outdated one, or a Google listing nobody's touched in years — Virgil Digital fixes that. Fixed prices. No agency jargon. You deal with me, directly, start to finish.</p>
-  <a href="/contact/" class="btn">Book your free 15-minute audit</a>
+<Layout title="Websites for South West UK businesses" description="Fast, conversion-focused websites for South West UK businesses. Fixed prices from £399, built and launched by Virgil Digital.">
+  <section class="hero">
+    <div>
+      <span class="kicker">South West UK · Websites that work</span>
+      <h1>A sharper website for a business people can <span class="accent">trust.</span></h1>
+      <p class="lede">Fast, focused websites for local businesses. Choose a proven design, send over your details, and get a polished site live without agency theatre.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn">Start at £399</a>
+        <a href="/services/" class="text-link">See packages →</a>
+      </div>
+    </div>
+    <div class="hero-preview" aria-label="Website preview showing a local business homepage">
+      <div class="preview-bar"><span></span><span></span><span></span><b>yourbusiness.co.uk</b></div>
+      <div class="preview-content"><span class="preview-kicker">LOCAL · TRUSTED · READY</span><strong>Make a great first impression.</strong><i></i><em></em><small></small></div>
+    </div>
+  </section>
   <h2 class="sr-only">Why businesses choose Virgil Digital</h2>
 
   <div class="cards">
@@ -24,10 +35,23 @@ import Layout from '../layouts/Layout.astro';
   </div>
 
   <h2>See it in <span class="accent">action</span></h2>
+  <p>Three proven starting points, adapted to your business rather than churned out unchanged.</p>
+  <div class="template-grid">
+    <div class="template-card"><div class="template-screen template-service"><span>01</span><strong>Local service</strong></div><h3>Local service</h3><p>For trades, beauty, health and other appointment-led businesses.</p></div>
+    <div class="template-card"><div class="template-screen template-pro"><span>02</span><strong>Professional</strong></div><h3>Professional</h3><p>For consultants, studios and practices that need clarity and trust.</p></div>
+    <div class="template-card"><div class="template-screen template-retail"><span>03</span><strong>Retail &amp; hospitality</strong></div><h3>Retail &amp; hospitality</h3><p>For places people discover, visit and recommend.</p></div>
+  </div>
+
+  <h2>Recent <span class="accent">work</span></h2>
+  <div class="work-grid">
+    <a class="work-card" href="https://alterationsbynicole.com" target="_blank" rel="noopener"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole website preview" loading="lazy" /><span><strong>Alterations by Nicole</strong><small>Tailoring studio · Bristol</small></span><b>View site ↗</b></a>
+    <a class="work-card" href="https://marveldesserts.co.uk" target="_blank" rel="noopener"><img src="/work/marvel-desserts.jpg" alt="Marvel Desserts menu and website preview" loading="lazy" /><span><strong>Marvel Desserts</strong><small>Desserts and coffee · Bristol</small></span><b>View site ↗</b></a>
+    <a class="work-card work-card-dark" href="https://staysafeguide.com" target="_blank" rel="noopener"><div class="guide-preview"><small>STAYSAFE GUIDE</small><strong>Practical online safety for everyday life.</strong><i></i></div><span><strong>StaySafe Guide</strong><small>Online safety publication</small></span><b>View site ↗</b></a>
+  </div>
   <div class="case-study">
     <span class="kicker">Case study</span>
     <h3>Alterations by Nicole — Bristol</h3>
-    <p>A local tailoring business with no consistent name across Google and no way for customers to enquire online. I rebuilt the site, fixed the name mismatch on their Google listing, and added a working enquiry form. Enquiries have picked up noticeably since.</p>
+    <p>A local tailoring business with no consistent name across Google and no way for customers to enquire online. I rebuilt the site, fixed the name mismatch on their Google listing, and added a working enquiry form.</p>
     <p><a href="https://alterationsbynicole.com" target="_blank" rel="noopener">alterationsbynicole.com →</a></p>
   </div>
 
@@ -38,3 +62,22 @@ import Layout from '../layouts/Layout.astro';
 
   <a href="/contact/" class="btn">Book your free 15-minute audit</a>
 </Layout>
+
+<style>
+  .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:3rem; align-items:center; margin-bottom:4rem; }
+  .hero-actions { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+  .text-link { font-weight:600; text-decoration:none; }
+  .hero-preview { background:#11151f; border-radius:12px; padding:.7rem; box-shadow:0 18px 50px rgba(15,17,21,.16); transform:rotate(1.5deg); }
+  .preview-bar { display:flex; align-items:center; gap:.35rem; color:#9da5b5; font: .65rem 'JetBrains Mono', monospace; padding:.25rem .35rem .7rem; }
+  .preview-bar span { width:7px; height:7px; border-radius:50%; background:#596273; } .preview-bar b { margin-left:auto; font-weight:400; }
+  .preview-content { min-height:260px; border-radius:7px; padding:2.2rem 1.5rem; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); }
+  .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:2.2rem; }
+  .preview-content strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:260px; }
+  .preview-content i,.preview-content em,.preview-content small { display:block; height:7px; background:#cbd5e8; margin-top:1.2rem; width:80%; } .preview-content em { width:58%; margin-top:.5rem; } .preview-content small { width:28%; background:var(--accent); margin-top:1.8rem; height:22px; border-radius:4px; }
+  .template-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; }
+  .template-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--paper); }
+  .template-card h3,.template-card p { margin-left:1rem; margin-right:1rem; } .template-card h3 { margin-top:1rem; } .template-card p { font-size:.9rem; }
+  .template-screen { height:145px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between; color:#fff; font-family:'Space Grotesk',sans-serif; } .template-screen span { font: .7rem 'JetBrains Mono',monospace; opacity:.75; } .template-screen strong { font-size:1.5rem; } .template-service { background:#2958dc; } .template-pro { background:#18221d; } .template-retail { background:#b64c2e; }
+  .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; } .work-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; color:var(--ink); text-decoration:none; background:var(--paper); } .work-card img,.guide-preview { display:block; width:100%; height:180px; object-fit:cover; background:var(--paper-alt); } .work-card span { display:block; padding:1rem 1rem .2rem; } .work-card strong,.work-card small { display:block; } .work-card small { color:var(--ink-mute); font-size:.85rem; margin-top:.2rem; } .work-card b { display:block; padding:.7rem 1rem 1rem; color:var(--accent); font-size:.85rem; } .guide-preview { padding:1.4rem; background:#12252b; color:#effcf4; } .guide-preview small { font: .6rem 'JetBrains Mono',monospace; color:#7de0ae; } .guide-preview strong { display:block; font:600 1.35rem/1.1 'Space Grotesk',sans-serif; margin-top:2.5rem; max-width:220px; } .guide-preview i { display:block; width:34px; height:4px; background:#7de0ae; margin-top:1.2rem; }
+  @media (max-width:720px) { .hero { grid-template-columns:1fr; gap:2rem; } .hero-preview { transform:none; } .template-grid,.work-grid { grid-template-columns:1fr; } .template-screen { height:120px; } }
+</style>

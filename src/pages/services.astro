@@ -1,18 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Services & Pricing" description="Website and Google Business Profile packages for South West UK businesses, fair fixed prices.">
+<Layout title="Website packages & pricing" description="Fixed-price Astro website packages for South West UK businesses, from £399.">
   <span class="kicker">Services &amp; Pricing</span>
   <h1>Fixed prices. <span class="accent">No surprise extras.</span></h1>
-  <p class="lede">You'll know exactly what you're paying and why before any work starts.</p>
-
-  <table>
-    <tr><th>Package</th><th>Price</th><th>What it's for</th></tr>
-    <tr><td><strong>Website + Google Business Profile</strong></td><td>£950–£1,500</td><td>The full fix — a working site and a Google presence that actually brings people in</td></tr>
-    <tr><td><strong>Website only</strong></td><td>£750–£950</td><td>Your Google listing's already sorted, you just need the site</td></tr>
-    <tr><td><strong>Fix what you've got</strong></td><td>Free audit, quoted after</td><td>Existing WordPress/Wix/Squarespace site or listing that needs work</td></tr>
-    <tr><td><strong>Ongoing care</strong></td><td>~£30–£60/month</td><td>Send me changes, I make them — no waiting, no CMS to learn</td></tr>
-  </table>
+  <p class="lede">Choose a clear starting point. Every site is fast, mobile-ready and built around one thing: making it easier for the right customer to choose you.</p>
+  <div class="pricing-grid">
+    <article class="price-card featured"><span class="kicker">Most popular</span><h2>Business site</h2><p class="price">£399</p><p>For businesses ready to look established and get enquiries.</p><ul><li>Up to five pages</li><li>Template adapted to your brand</li><li>Basic SEO and social metadata</li><li>Contact form and Cloudflare launch</li><li>Two revision rounds</li></ul><a href="/contact/" class="btn">Start a £399 site</a></article>
+    <article class="price-card"><span class="kicker">Ongoing</span><h2>Website care</h2><p class="price">£19<span>/mo</span></p><p>For updates, checks and peace of mind after launch.</p><ul><li>Small text and image changes</li><li>Hosting and uptime checks</li><li>Monthly backup review</li><li>Priority email support</li></ul><a href="/contact/" class="btn">Ask about care</a></article>
+  </div>
+  <p>Copywriting, extra pages, booking systems, ecommerce and bespoke functionality are quoted separately before work begins.</p>
   <p>Social media and ads management: available once we're working together — ask me directly.</p>
 
   <h2>Why <span class="accent">me</span>, not the alternatives?</h2>
@@ -27,3 +24,12 @@ import Layout from '../layouts/Layout.astro';
 
   <a href="/contact/" class="btn">Book your free 15-minute audit</a>
 </Layout>
+
+<style>
+  .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0; }
+  .price-card { border:1px solid var(--rule); border-radius:10px; padding:1.5rem; display:flex; flex-direction:column; align-items:flex-start; }
+  .price-card.featured { border:2px solid var(--accent); padding:calc(1.5rem - 1px); box-shadow:0 10px 30px rgba(47,92,255,.1); }
+  .price-card h2 { margin:.2rem 0 .35rem; font-size:1.35rem; } .price { font:700 2.2rem 'Space Grotesk',sans-serif; color:var(--ink); margin-bottom:.5rem; } .price span { font:500 .9rem Inter,sans-serif; color:var(--ink-mute); }
+  .price-card ul { padding-left:1.1rem; margin:1rem 0 1.5rem; } .price-card li { margin:.35rem 0; font-size:.92rem; } .price-card .btn { margin-top:auto; }
+  @media (max-width:760px) { .pricing-grid { grid-template-columns:1fr; } }
+</style>
