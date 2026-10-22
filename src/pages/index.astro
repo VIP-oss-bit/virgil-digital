@@ -17,9 +17,9 @@ import Layout from '../layouts/Layout.astro';
       <div class="preview-slides">
         <div class="preview-slide is-active"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole project preview" /><div><span class="preview-kicker">ALTERATIONS BY NICOLE · BRISTOL</span><strong>A website that turns trust into enquiries.</strong></div></div>
         <div class="preview-slide preview-dessert"><div><span class="preview-kicker">MARVEL DESSERTS · BRISTOL</span><strong>Desserts, coffee and late nights.</strong><i></i></div></div>
-        <div class="preview-slide preview-guide"><div><span class="preview-kicker">STAYSAFE GUIDE · ONLINE SAFETY</span><strong>Clear advice for everyday digital life.</strong><i></i></div></div>
+        <div class="preview-slide preview-guide"><div><span class="preview-kicker">STAYSAFE GUIDE · ONLINE SAFETY</span><strong>Clear advice for everyday digital life.</strong><div class="guide-topics"><span>Scams</span><span>Privacy</span><span>Families</span></div><i></i></div></div>
       </div>
-      <div class="preview-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
+      <div class="preview-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div><div class="preview-progress" aria-hidden="true"></div>
     </div>
   </section>
   <h2 class="sr-only">Why businesses choose Virgil Digital</h2>
@@ -81,7 +81,7 @@ import Layout from '../layouts/Layout.astro';
   .hero-preview { position:relative; background:#11151f; border-radius:12px; padding:.7rem; box-shadow:0 18px 50px rgba(15,17,21,.16); transform:rotate(1.5deg); animation:float-preview 6s ease-in-out infinite; }
   .preview-bar { display:flex; align-items:center; gap:.35rem; color:#9da5b5; font: .65rem 'JetBrains Mono', monospace; padding:.25rem .35rem .7rem; }
   .preview-bar span { width:7px; height:7px; border-radius:50%; background:#596273; } .preview-bar b { margin-left:auto; font-weight:400; }
-  .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .6s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .preview-dots { display:flex; justify-content:center; gap:.4rem; padding:.7rem 0 .1rem; } .preview-dots span { width:6px; height:6px; border-radius:50%; background:#596273; transition:background .3s; } .preview-dots span.is-active { background:#fff; }
+  .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .35s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .guide-topics { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.2rem; } .guide-topics span { border:1px solid rgba(125,224,174,.55); border-radius:999px; padding:.25rem .5rem; font: .6rem 'JetBrains Mono',monospace; color:#b8f4cf; } .preview-dots { display:flex; justify-content:center; gap:.4rem; padding:.7rem 0 .1rem; } .preview-dots span { width:6px; height:6px; border-radius:50%; background:#596273; transition:background .3s; } .preview-dots span.is-active { background:#fff; } .preview-progress { height:2px; background:var(--accent); transform-origin:left; animation:carousel-progress 2.4s linear infinite; }
   .template-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; }
   .template-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--paper); }
   .template-card h3,.template-card p { margin-left:1rem; margin-right:1rem; } .template-card h3 { margin-top:1rem; } .template-card p { font-size:.9rem; }
@@ -94,6 +94,7 @@ import Layout from '../layouts/Layout.astro';
   .reveal-group .reveal:nth-child(2) { transition-delay:.1s; } .reveal-group .reveal:nth-child(3) { transition-delay:.2s; }
   .template-card,.work-card { transition:transform .25s ease, box-shadow .25s ease; } .template-card:hover,.work-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(15,17,21,.1); }
   @keyframes float-preview { 0%,100% { transform:rotate(1.5deg) translateY(0); } 50% { transform:rotate(1.5deg) translateY(-8px); } }
+  @keyframes carousel-progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .hero-preview { animation:none; } .template-card,.work-card { transition:none; } }
 </style>
 
@@ -123,6 +124,6 @@ import Layout from '../layouts/Layout.astro';
     dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
   };
   if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 4200);
+    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 2400);
   }
 </script>
