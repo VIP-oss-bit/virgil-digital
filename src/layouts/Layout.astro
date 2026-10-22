@@ -54,7 +54,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <body>
     <nav class="top">
       <div class="nav-inner">
-        <a href="/" class="brand">VIRGIL <span>DIGITAL</span></a>
+        <a href="/" class="brand"><b class="brand-mark">V</b><span class="brand-name">VIRGIL <em>DIGITAL</em></span></a>
         <div class="nav-links">
           <a href="/about/">About</a>
           <a href="/services/">Services</a>
@@ -72,8 +72,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
     <footer>
       <div class="foot-wrap">
-        <span>© Virgil Digital · UK-wide</span>
-        <span>hello@virgildigital.co.uk</span>
+        <div class="foot-brand"><span class="kicker">Virgil Digital</span><h2>Make your business easier to choose.</h2><a href="/contact/" class="foot-cta">Start a conversation →</a></div>
+        <div class="foot-links"><strong>Explore</strong><a href="/work/">Work</a><a href="/guides/">Guides</a><a href="/faq/">FAQ</a><a href="/process/">Process</a></div>
+        <div class="foot-links"><strong>Contact</strong><a href="mailto:hello@virgildigital.co.uk">hello@virgildigital.co.uk</a><span>Bristol-based · UK-wide</span><span>© Virgil Digital</span></div>
       </div>
     </footer>
   </body>
@@ -132,6 +133,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   }
 
   .brand {
+    display:flex;
+    align-items:center;
+    gap:.55rem;
     font-family:'Space Grotesk',sans-serif;
     font-weight:700;
     font-size:1.05rem;
@@ -140,8 +144,25 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     text-decoration:none;
   }
 
-  .brand span {
+  .brand-name {
+    color:var(--ink);
+  }
+
+  .brand-name em {
     color:var(--accent);
+    font-style:normal;
+  }
+
+  .brand-mark {
+    display:grid;
+    place-items:center;
+    width:1.7rem;
+    height:1.7rem;
+    border-radius:5px;
+    background:var(--ink);
+    color:#fff;
+    font:700 1rem 'Space Grotesk',sans-serif;
+    transform:skew(-7deg);
   }
 
   .nav-links {
@@ -160,6 +181,27 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   .nav-links a:hover {
     color:var(--ink);
   }
+
+  .nav-links a:not(.nav-cta) {
+    position:relative;
+    padding:.35rem 0;
+  }
+
+  .nav-links a:not(.nav-cta)::after {
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:2px;
+    background:var(--accent);
+    transform:scaleX(0);
+    transform-origin:right;
+    transition:transform .2s ease;
+  }
+
+  .nav-links a:not(.nav-cta):hover::after,
+  .nav-links a[aria-current='page']::after { transform:scaleX(1); transform-origin:left; }
 
   .nav-cta {
     background:var(--ink);
@@ -374,10 +416,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   }
 
   footer {
-    background:var(--ink);
+    background:#11151f;
     color:#fff;
-    padding:2rem 6%;
+    padding:3.5rem 6%;
     margin-top:4rem;
+    border-top:4px solid var(--accent-warm);
   }
 
   .foot-wrap {
@@ -385,10 +428,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     margin:0 auto;
     display:flex;
     justify-content:space-between;
-    flex-wrap:wrap;
-    gap:0.5rem;
-    font-size:0.85rem;
-    opacity:0.75;
+    gap:3rem;
+  }
+
+  .foot-brand { flex:1.5; } .foot-brand h2 { color:#fff; max-width:360px; margin:.2rem 0 1rem; } .foot-brand .kicker { color:#f2bd70; }
+  .foot-cta { color:#fff; text-decoration:none; font-weight:600; }
+  .foot-links { display:flex; flex-direction:column; gap:.45rem; min-width:130px; font-size:.9rem; } .foot-links strong { color:#fff; margin-bottom:.35rem; } .foot-links a,.foot-links span { color:#b9c0ce; text-decoration:none; } .foot-links a:hover { color:#fff; }
   }
 
   .case-image { display:block; width:100%; max-height:560px; object-fit:contain; object-position:top; background:var(--paper-alt); border:1px solid var(--rule); border-radius:10px; margin:2rem 0 3rem; }
@@ -421,5 +466,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     .brand {
       font-size:0.9rem;
     }
+    .brand-mark { width:1.5rem; height:1.5rem; font-size:.9rem; }
+    .foot-wrap { flex-direction:column; gap:2rem; }
   }
 </style>
