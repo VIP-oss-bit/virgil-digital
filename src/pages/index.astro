@@ -82,6 +82,11 @@ import Layout from '../layouts/Layout.astro';
     <cite>— Nicole, <a href="https://alterationsbynicole.com" target="_blank" rel="noopener">Alterations by Nicole</a></cite>
   </div>
 
+  <section class="help-strip reveal">
+    <div><span class="kicker">Not sure what you need?</span><h2>Start with the <span class="accent">useful stuff.</span></h2><p>Read how websites work with social media, what SEO actually means, and how a refresh or new build happens.</p></div>
+    <div class="help-links"><a href="/guides/social-media-vs-website/">Social media vs a website <b>→</b></a><a href="/guides/what-is-seo/">What SEO actually means <b>→</b></a><a href="/faq/">Frequently asked questions <b>→</b></a></div>
+  </section>
+
   <a href="/contact/" class="btn">Book your free 15-minute audit</a>
 </Layout>
 
@@ -121,6 +126,8 @@ import Layout from '../layouts/Layout.astro';
   .hero-actions .btn { background:var(--accent-warm); }
   .hero-actions .btn:hover { background:var(--ink); }
   .featured-work { border-top:4px solid var(--accent-mint); }
+  .help-strip { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; margin:3rem 0; padding:2rem; border-radius:10px; background:#eef7f3; } .help-strip h2 { margin:.2rem 0 .5rem; } .help-strip p { margin-bottom:0; } .help-links a { display:flex; justify-content:space-between; gap:1rem; padding:.8rem 0; border-bottom:1px solid rgba(15,17,21,.14); color:var(--ink); text-decoration:none; font-weight:600; } .help-links a:first-child { border-top:1px solid rgba(15,17,21,.14); } .help-links b { color:var(--accent-mint); }
+  @media (max-width:720px) { .help-strip { grid-template-columns:1fr; padding:1.25rem; } }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .hero-preview { animation:none; } .template-card,.work-card { transition:none; } }
 </style>
 
