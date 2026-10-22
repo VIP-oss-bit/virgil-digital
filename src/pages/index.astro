@@ -12,9 +12,14 @@ import Layout from '../layouts/Layout.astro';
         <a href="/services/" class="text-link">See packages →</a>
       </div>
     </div>
-    <div class="hero-preview" aria-label="Website preview showing a local business homepage">
+    <div class="hero-preview project-carousel" aria-label="Selected Virgil Digital project previews">
       <div class="preview-bar"><span></span><span></span><span></span><b>yourbusiness.co.uk</b></div>
-      <div class="preview-content"><span class="preview-kicker">LOCAL · TRUSTED · READY</span><strong>Make a great first impression.</strong><i></i><em></em><small></small></div>
+      <div class="preview-slides">
+        <div class="preview-slide is-active"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole project preview" /><div><span class="preview-kicker">ALTERATIONS BY NICOLE · BRISTOL</span><strong>A website that turns trust into enquiries.</strong></div></div>
+        <div class="preview-slide preview-dessert"><div><span class="preview-kicker">MARVEL DESSERTS · BRISTOL</span><strong>Desserts, coffee and late nights.</strong><i></i></div></div>
+        <div class="preview-slide preview-guide"><div><span class="preview-kicker">STAYSAFE GUIDE · ONLINE SAFETY</span><strong>Clear advice for everyday digital life.</strong><i></i></div></div>
+      </div>
+      <div class="preview-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
     </div>
   </section>
   <h2 class="sr-only">Why businesses choose Virgil Digital</h2>
@@ -76,10 +81,7 @@ import Layout from '../layouts/Layout.astro';
   .hero-preview { position:relative; background:#11151f; border-radius:12px; padding:.7rem; box-shadow:0 18px 50px rgba(15,17,21,.16); transform:rotate(1.5deg); animation:float-preview 6s ease-in-out infinite; }
   .preview-bar { display:flex; align-items:center; gap:.35rem; color:#9da5b5; font: .65rem 'JetBrains Mono', monospace; padding:.25rem .35rem .7rem; }
   .preview-bar span { width:7px; height:7px; border-radius:50%; background:#596273; } .preview-bar b { margin-left:auto; font-weight:400; }
-  .preview-content { min-height:260px; border-radius:7px; padding:2.2rem 1.5rem; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); }
-  .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:2.2rem; }
-  .preview-content strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:260px; }
-  .preview-content i,.preview-content em,.preview-content small { display:block; height:7px; background:#cbd5e8; margin-top:1.2rem; width:80%; } .preview-content em { width:58%; margin-top:.5rem; } .preview-content small { width:28%; background:var(--accent); margin-top:1.8rem; height:22px; border-radius:4px; }
+  .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .6s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .preview-dots { display:flex; justify-content:center; gap:.4rem; padding:.7rem 0 .1rem; } .preview-dots span { width:6px; height:6px; border-radius:50%; background:#596273; transition:background .3s; } .preview-dots span.is-active { background:#fff; }
   .template-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; }
   .template-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--paper); }
   .template-card h3,.template-card p { margin-left:1rem; margin-right:1rem; } .template-card h3 { margin-top:1rem; } .template-card p { font-size:.9rem; }
@@ -109,5 +111,18 @@ import Layout from '../layouts/Layout.astro';
     revealItems.forEach((item) => observer.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
+</script>
+
+<script>
+  const slides = document.querySelectorAll('.preview-slide');
+  const dots = document.querySelectorAll('.preview-dots span');
+  let activeSlide = 0;
+  const showSlide = (index) => {
+    slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === index));
+    dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+  };
+  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 4200);
   }
 </script>
