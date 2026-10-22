@@ -57,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
     <a class="work-card" href="https://alterationsbynicole.com" target="_blank" rel="noopener"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole website preview" loading="lazy" /><span><strong>Alterations by Nicole</strong><small>Tailoring studio · Bristol</small></span><b>View site ↗</b></a>
     <a class="work-card" href="https://marveldesserts.co.uk" target="_blank" rel="noopener"><div class="dessert-preview"><small>MARVEL DESSERTS</small><strong>Desserts, coffee<br />and late nights.</strong><i></i></div><span><strong>Marvel Desserts</strong><small>Desserts and coffee · Bristol</small></span><b>View site ↗</b></a>
     <a class="work-card work-card-dark" href="https://staysafeguide.com" target="_blank" rel="noopener"><div class="guide-preview"><small>STAYSAFE GUIDE</small><strong>Practical online safety for everyday life.</strong><i></i></div><span><strong>StaySafe Guide</strong><small>Online safety publication</small></span><b>View site ↗</b></a>
-    <a class="work-card" href="https://mealwright.co.uk" target="_blank" rel="noopener"><img src="/work/mealwright-site.png" alt="Mealwright app website preview" loading="lazy" /><span><strong>Mealwright</strong><small>Android meal planner and generator</small></span><b>View project ↗</b></a>
+    <a class="work-card" href="https://mealwright.co.uk" target="_blank" rel="noopener"><img src="/work/mealwright-site.png" alt="Mealwright app website preview" loading="lazy" /><span><strong>Mealwright</strong><small>My Android meal planner and generator</small></span><b>View project ↗</b></a>
   </div>
   <div class="case-study">
     <span class="kicker">Case study</span>
@@ -102,6 +102,14 @@ import Layout from '../layouts/Layout.astro';
   .template-card,.work-card { transition:transform .25s ease, box-shadow .25s ease; } .template-card:hover,.work-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(15,17,21,.1); }
   @keyframes float-preview { 0%,100% { transform:rotate(1.5deg) translateY(0); } 50% { transform:rotate(1.5deg) translateY(-8px); } }
   @keyframes carousel-progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  /* Keep the work legible: the screenshot is the hero, the label sits below it. */
+  .preview-slide { display:block; padding:0; transition:opacity .65s ease; }
+  .preview-slide img { position:relative; display:block; height:218px; opacity:1; filter:none; object-fit:cover; object-position:top; }
+  .preview-slide > div { padding:1rem 1.25rem 1.15rem; background:#fff; color:var(--ink); min-height:118px; }
+  .preview-slide strong { font-size:1.25rem; }
+  .preview-slide .preview-kicker { margin-bottom:.65rem; }
+  .preview-dessert > div { background:#17110f; color:#fff4e8; }
+  .preview-guide > div { background:#12252b; color:#effcf4; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .hero-preview { animation:none; } .template-card,.work-card { transition:none; } }
 </style>
 
