@@ -29,7 +29,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'Virgil Digital',
       url: Astro.site, email: 'hello@virgildigital.co.uk', description,
-      areaServed: ['Bristol', 'South West England'], founder: { '@type': 'Person', name: 'Virgil Pais' }, priceRange: '££'
+      areaServed: 'United Kingdom', founder: { '@type': 'Person', name: 'Virgil Pais' }, priceRange: '££'
     })} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,7 +69,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
     <footer>
       <div class="foot-wrap">
-        <span>© Virgil Digital · South West UK</span>
+        <span>© Virgil Digital · UK-wide</span>
         <span>hello@virgildigital.co.uk</span>
       </div>
     </footer>
