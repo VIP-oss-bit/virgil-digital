@@ -21,6 +21,12 @@ import Layout from '../layouts/Layout.astro';
     <tr><td>Speed</td><td class="win">Live in 1–3 weeks</td><td>Weeks of process before pixels</td><td>Depends on their other gigs</td></tr>
     <tr><td>Local knowledge</td><td class="win">Bristol-based, South West UK focus</td><td>Rarely local to you</td><td>Usually not local</td></tr>
   </table></div>
+  <div class="compare-mobile">
+    <article><strong>Who does the work</strong><p><b>Virgil Digital:</b> Me, directly. No handoff.</p><p><b>Agency:</b> Junior staff after the sales call.</p><p><b>Marketplace:</b> Varies by listing.</p></article>
+    <article><strong>Pricing</strong><p><b>Virgil Digital:</b> Fixed quote upfront.</p><p><b>Agency:</b> Retainers and change orders.</p><p><b>Marketplace:</b> Cheap until revisions pile up.</p></article>
+    <article><strong>Communication</strong><p><b>Virgil Digital:</b> Direct contact with the person building your site.</p><p><b>Agency:</b> Through an account manager.</p><p><b>Marketplace:</b> Often inconsistent hours.</p></article>
+    <article><strong>Speed and local knowledge</strong><p><b>Virgil Digital:</b> Bristol-based, South West focus, typically live in 1–3 weeks.</p><p><b>Alternatives:</b> Timelines and local understanding vary.</p></article>
+  </div>
 
   <a href="/contact/" class="btn">Book your free 15-minute audit</a>
 </Layout>
@@ -34,4 +40,9 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width:760px) { .pricing-grid { grid-template-columns:1fr; } }
   .compare-scroll { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--rule); border-radius:8px; }
   .compare-table { min-width:680px; margin:0; }
+  .compare-mobile { display:none; }
+  .compare-mobile article { border:1px solid var(--rule); border-radius:8px; padding:1rem; margin:.75rem 0; background:var(--paper-alt); }
+  .compare-mobile article strong { color:var(--ink); display:block; margin-bottom:.5rem; }
+  .compare-mobile article p { font-size:.9rem; margin:.35rem 0; }
+  @media (max-width:760px) { .compare-scroll { display:none; } .compare-mobile { display:block; } }
 </style>
