@@ -18,8 +18,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="preview-slide is-active"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole project preview" /><div><span class="preview-kicker">ALTERATIONS BY NICOLE · BRISTOL</span><strong>A website that turns trust into enquiries.</strong></div></div>
         <div class="preview-slide preview-dessert"><img src="/work/marvel-desserts-site.png" alt="Marvel Desserts website preview" loading="eager" /><div><span class="preview-kicker">MARVEL DESSERTS · BRISTOL</span><strong>Desserts, coffee and late nights.</strong><i></i></div></div>
         <div class="preview-slide preview-guide"><img src="/work/staysafe-guide-site.png" alt="StaySafe Guide website preview" loading="eager" /><div><span class="preview-kicker">STAYSAFE GUIDE · ONLINE SAFETY</span><strong>Clear advice for everyday digital life.</strong><div class="guide-topics"><span>Scams</span><span>Privacy</span><span>Families</span></div><i></i></div></div>
+        <div class="preview-slide preview-mealwright"><img src="/work/mealwright-site.png" alt="Mealwright website preview" loading="eager" /><div><span class="preview-kicker">MEALWRIGHT · MY PRODUCT</span><strong>An Android meal planner with a generator.</strong><i></i></div></div>
       </div>
-      <div class="preview-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
+      <div class="preview-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
     </div>
   </section>
   <h2 class="sr-only">Why businesses choose Virgil Digital</h2>
@@ -104,12 +105,18 @@ import Layout from '../layouts/Layout.astro';
   @keyframes carousel-progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
   /* Keep the work legible: the screenshot is the hero, the label sits below it. */
   .preview-slide { display:block; padding:0; transition:opacity .65s ease; }
-  .preview-slide img { position:relative; display:block; height:218px; opacity:1; filter:none; object-fit:cover; object-position:top; }
+  .preview-slide img { position:relative; display:block; height:218px; opacity:1; filter:none; object-fit:contain; object-position:center; background:#f4f5f7; }
   .preview-slide > div { padding:1rem 1.25rem 1.15rem; background:#fff; color:var(--ink); min-height:118px; }
   .preview-slide strong { font-size:1.25rem; }
   .preview-slide .preview-kicker { margin-bottom:.65rem; }
   .preview-dessert > div { background:#17110f; color:#fff4e8; }
   .preview-guide > div { background:#12252b; color:#effcf4; }
+  .preview-mealwright > div { background:#fbf7ef; color:#2c211d; }
+  .preview-mealwright .preview-kicker { color:var(--accent-warm); }
+  .preview-mealwright i { background:var(--accent-warm); }
+  .hero-actions .btn { background:var(--accent-warm); }
+  .hero-actions .btn:hover { background:var(--ink); }
+  .featured-work { border-top:4px solid var(--accent-mint); }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .hero-preview { animation:none; } .template-card,.work-card { transition:none; } }
 </style>
 
@@ -139,6 +146,6 @@ import Layout from '../layouts/Layout.astro';
     dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
   };
   if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 1500);
+    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 2800);
   }
 </script>
