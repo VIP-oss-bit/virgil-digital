@@ -86,6 +86,23 @@ Marvel testimonial, attributed to Naz: “Huge thanks to Virgil for his guidance
 13. Keep generated sites in isolated Git branches with preview deployments and human approval before production.
 14. Track API costs, hosting, domains, email, support time, revisions and lead-acquisition cost before changing prices.
 
+## Production launch checklist
+
+Use this order for the first public launch of the redesigned site. Do not submit the sitemap until the live domain shows this version.
+
+- [ ] Confirm the working tree is clean and the latest branch is pushed.
+- [ ] Confirm the production branch in Cloudflare Pages; do not merge or change it until identified.
+- [ ] Review the homepage on desktop and mobile: navigation, carousel, buttons, images, footer and spacing.
+- [ ] Test every public route: About, Services, Work, all case studies, Guides, FAQ, Process, Contact, Privacy and Terms.
+- [ ] Send one live contact-form test and confirm delivery to `hello@virgildigital.co.uk`.
+- [ ] Check external links, email links, sitemap, canonical URLs and page titles.
+- [ ] Merge or deploy `redesign-399` to the confirmed production branch using the existing Cloudflare workflow.
+- [ ] Confirm `https://virgildigital.co.uk` serves the redesigned site on desktop and mobile.
+- [ ] Confirm `https://virgildigital.co.uk/sitemap.xml` lists the new public pages.
+- [ ] Submit `sitemap.xml` in Google Search Console.
+- [ ] Request indexing for the homepage and the key `/services/`, `/work/`, `/process/` and `/contact/` pages.
+- [ ] Record the launch date and production commit in this document.
+
 ## Safe rollback workflow
 
 Work on feature branches, commit small changes and push branches before deployment testing. Use `git log --oneline` to inspect history. Do not reset or delete work without confirming the exact target. Generated `.astro/`, `dist/` and `node_modules/` remain ignored.
