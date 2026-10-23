@@ -20,7 +20,16 @@ import Layout from '../layouts/Layout.astro';
         <div class="preview-slide preview-guide"><img src="/work/staysafe-guide-site.png" alt="StaySafe Guide website preview" loading="eager" /><div><span class="preview-kicker">STAYSAFE GUIDE · ONLINE SAFETY</span><strong>Clear advice for everyday digital life.</strong><div class="guide-topics"><span>Scams</span><span>Privacy</span><span>Families</span></div><i></i></div></div>
         <div class="preview-slide preview-mealwright"><img src="/work/mealwright-site.png" alt="Mealwright website preview" loading="eager" /><div><span class="preview-kicker">MEALWRIGHT · MY PRODUCT</span><strong>An Android meal planner with a generator.</strong><i></i></div></div>
       </div>
-      <div class="preview-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
+      <div class="preview-controls" aria-label="Project preview controls">
+        <button class="preview-arrow preview-prev" type="button" aria-label="Previous project preview">←</button>
+        <div class="preview-dots">
+          <button type="button" class="is-active" aria-label="Show project preview 1" aria-current="true"></button>
+          <button type="button" aria-label="Show project preview 2"></button>
+          <button type="button" aria-label="Show project preview 3"></button>
+          <button type="button" aria-label="Show project preview 4"></button>
+        </div>
+        <button class="preview-arrow preview-next" type="button" aria-label="Next project preview">→</button>
+      </div>
     </div>
   </section>
   <h2 class="sr-only">Why businesses choose Virgil Digital</h2>
@@ -97,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
   .hero-preview { position:relative; background:#11151f; border-radius:12px; padding:.7rem; box-shadow:0 18px 50px rgba(15,17,21,.16); transform:rotate(1.5deg); animation:float-preview 6s ease-in-out infinite; }
   .preview-bar { display:flex; align-items:center; gap:.35rem; color:#9da5b5; font: .65rem 'JetBrains Mono', monospace; padding:.25rem .35rem .7rem; }
   .preview-bar span { width:7px; height:7px; border-radius:50%; background:#596273; } .preview-bar b { margin-left:auto; font-weight:400; }
-  .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .35s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .guide-topics { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.2rem; } .guide-topics span { border:1px solid rgba(125,224,174,.55); border-radius:999px; padding:.25rem .5rem; font: .6rem 'JetBrains Mono',monospace; color:#b8f4cf; } .preview-dots { display:flex; justify-content:center; gap:.4rem; padding:.7rem 0 .1rem; } .preview-dots span { width:6px; height:6px; border-radius:50%; background:#596273; transition:background .3s; } .preview-dots span.is-active { background:#fff; } .preview-progress { height:2px; background:var(--accent); transform-origin:left; animation:carousel-progress 2.4s linear infinite; }
+  .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .35s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .guide-topics { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.2rem; } .guide-topics span { border:1px solid rgba(125,224,174,.55); border-radius:999px; padding:.25rem .5rem; font: .6rem 'JetBrains Mono',monospace; color:#b8f4cf; }
   .template-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; }
   .template-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--paper); }
   .template-card h3,.template-card p { margin-left:1rem; margin-right:1rem; } .template-card h3 { margin-top:1rem; } .template-card p { font-size:.9rem; }
@@ -123,6 +132,13 @@ import Layout from '../layouts/Layout.astro';
   .preview-mealwright > div { background:#fbf7ef; color:#2c211d; }
   .preview-mealwright .preview-kicker { color:var(--accent-warm); }
   .preview-mealwright i { background:var(--accent-warm); }
+  .preview-controls { display:flex; align-items:center; justify-content:center; gap:.75rem; padding:.55rem 0 .05rem; }
+  .preview-dots { display:flex; justify-content:center; gap:.4rem; }
+  .preview-dots button { width:8px; height:8px; border:0; border-radius:50%; padding:0; background:#596273; cursor:pointer; }
+  .preview-dots button.is-active { background:#fff; }
+  .preview-dots button:focus-visible,.preview-arrow:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+  .preview-arrow { width:28px; height:28px; border:1px solid #596273; border-radius:50%; background:transparent; color:#fff; cursor:pointer; line-height:1; }
+  .preview-arrow:hover { border-color:#fff; }
   .hero-actions .btn { background:var(--accent-warm); }
   .hero-actions .btn:hover { background:var(--ink); }
   .featured-work { border-top:4px solid var(--accent-mint); }
@@ -150,13 +166,22 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
   const slides = document.querySelectorAll('.preview-slide');
-  const dots = document.querySelectorAll('.preview-dots span');
+  const dots = document.querySelectorAll('.preview-dots button');
+  const carousel = document.querySelector('.project-carousel');
+  const previous = document.querySelector('.preview-prev');
+  const next = document.querySelector('.preview-next');
   let activeSlide = 0;
   const showSlide = (index) => {
-    slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === index));
-    dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeSlide));
+    dots.forEach((dot, dotIndex) => { dot.classList.toggle('is-active', dotIndex === activeSlide); dot.setAttribute('aria-current', dotIndex === activeSlide ? 'true' : 'false'); });
   };
-  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.setInterval(() => { activeSlide = (activeSlide + 1) % slides.length; showSlide(activeSlide); }, 2800);
-  }
+  previous?.addEventListener('click', () => showSlide(activeSlide - 1));
+  next?.addEventListener('click', () => showSlide(activeSlide + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+  let timer;
+  const start = () => { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => showSlide(activeSlide + 1), 2800); };
+  const stop = () => { if (timer) window.clearInterval(timer); };
+  carousel?.addEventListener('mouseenter', stop); carousel?.addEventListener('mouseleave', start); carousel?.addEventListener('focusin', stop); carousel?.addEventListener('focusout', (event) => { if (!carousel.contains(event.relatedTarget as Node)) start(); });
+  start();
 </script>
