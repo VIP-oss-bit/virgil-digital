@@ -107,6 +107,13 @@ import Layout from '../layouts/Layout.astro';
   .preview-bar { display:flex; align-items:center; gap:.35rem; color:#9da5b5; font: .65rem 'JetBrains Mono', monospace; padding:.25rem .35rem .7rem; }
   .preview-bar span { width:7px; height:7px; border-radius:50%; background:#596273; } .preview-bar b { margin-left:auto; font-weight:400; }
   .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .35s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .guide-topics { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.2rem; } .guide-topics span { border:1px solid rgba(125,224,174,.55); border-radius:999px; padding:.25rem .5rem; font: .6rem 'JetBrains Mono',monospace; color:#b8f4cf; }
+  /* Keep every carousel caption readable while Lighthouse evaluates hidden slides too. */
+  .preview-slide > div { background:rgba(255,255,255,.94); color:#172033; padding:.8rem .9rem; border-radius:7px; box-shadow:0 5px 18px rgba(0,0,0,.12); }
+  .preview-dessert > div { background:rgba(23,17,15,.94); color:#fff4e8; }
+  .preview-guide > div { background:rgba(18,37,43,.95); color:#effcf4; }
+  .preview-slide .preview-kicker { color:#1746b5; }
+  .preview-dessert .preview-kicker { color:#f2bd70; }
+  .preview-guide .preview-kicker { color:#7de0ae; }
   .template-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; }
   .template-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--paper); }
   .template-card h3,.template-card p { margin-left:1rem; margin-right:1rem; } .template-card h3 { margin-top:1rem; } .template-card p { font-size:.9rem; }
