@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+const faqs = [
+  ['How much does a website cost?', 'The core business website package is £399. It covers up to five pages, a proven template adapted to your business, basic SEO metadata, a contact form, deployment, and two revision rounds.'],
+  ['How long does it take?', 'A focused site is usually ready in one to three weeks once the content and approvals are available.'],
+  ['Can you improve an existing website?', 'Yes. I start with an audit to decide whether the current site should be improved or rebuilt. Website refreshes start from £499 when the scope is clear.'],
+  ['Do I need to write everything?', 'You provide the facts, offers, prices, and images. I can help structure and refine the copy, with larger copywriting projects quoted separately.'],
+  ['Will you help with Google?', 'I can improve the public-facing connection between your website and Google Business Profile, and help with access or setup where the owner authorises it.'],
+  ['Who owns the website?', 'Ownership and handover terms are agreed before work begins. Domains and client accounts should remain accessible to the client.'],
+  ['What happens after launch?', 'You can manage small changes through the optional £19/month care plan, or receive a handover and make changes yourself.'],
+];
+---
+<Layout title="FAQ | Virgil Digital" description="Answers about Virgil Digital website pricing, timelines, refreshes, SEO, ownership, and ongoing care.">
+  <span class="kicker">Questions, answered</span><h1>Before we <span class="accent">start.</span></h1>
+  <p class="lede">Clear answers about what is included, what it costs, and what happens when an existing website needs work.</p>
+  <div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div>
+</Layout>
+<script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'FAQPage', mainEntity: faqs.map(([name, text]) => ({ '@type':'Question', name, acceptedAnswer:{ '@type':'Answer', text } })) })} />
+
+<style>
+  .faq-list { margin:2rem 0; border-top:1px solid var(--rule); } details { border-bottom:1px solid var(--rule); padding:1rem 0; } summary { cursor:pointer; color:var(--ink); font:600 1.05rem 'Space Grotesk',sans-serif; } details p { margin:1rem 0 .25rem; }
+</style>

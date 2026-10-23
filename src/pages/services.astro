@@ -1,29 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Services & Pricing" description="Website and Google Business Profile packages for South West UK businesses, fair fixed prices.">
+<Layout title="Website packages & pricing" description="Fixed-price Astro website packages for small businesses across the UK, from £399.">
   <span class="kicker">Services &amp; Pricing</span>
   <h1>Fixed prices. <span class="accent">No surprise extras.</span></h1>
-  <p class="lede">You'll know exactly what you're paying and why before any work starts.</p>
-
-  <table>
-    <tr><th>Package</th><th>Price</th><th>What it's for</th></tr>
-    <tr><td><strong>Website + Google Business Profile</strong></td><td>£950–£1,500</td><td>The full fix — a working site and a Google presence that actually brings people in</td></tr>
-    <tr><td><strong>Website only</strong></td><td>£750–£950</td><td>Your Google listing's already sorted, you just need the site</td></tr>
-    <tr><td><strong>Fix what you've got</strong></td><td>Free audit, quoted after</td><td>Existing WordPress/Wix/Squarespace site or listing that needs work</td></tr>
-    <tr><td><strong>Ongoing care</strong></td><td>~£30–£60/month</td><td>Send me changes, I make them — no waiting, no CMS to learn</td></tr>
-  </table>
+  <p class="lede">Choose a clear starting point. Every site is fast, mobile-ready and built around one thing: making it easier for the right customer to choose you.</p>
+  <div class="pricing-grid">
+    <article class="price-card featured"><span class="kicker">Most popular</span><h2>Business site</h2><p class="price">£399</p><p>For businesses ready to look established and get enquiries.</p><ul><li>Up to five pages</li><li>Template adapted to your brand</li><li>Basic SEO and social metadata</li><li>Contact form and Cloudflare launch</li><li>Two revision rounds</li></ul><a href="/contact/" class="btn">Start a £399 site</a></article>
+    <article class="price-card"><span class="kicker">Existing site</span><h2>Website refresh</h2><p class="price">£499<span> from</span></p><p>For a site that needs a sharper design, clearer content, or mobile fixes.</p><ul><li>Audit of the current site</li><li>Redesign or targeted improvements</li><li>Mobile and SEO cleanup</li><li>One or two revision rounds</li></ul><a href="/contact/" class="btn">Request a refresh audit</a></article>
+    <article class="price-card"><span class="kicker">Ongoing</span><h2>Website care</h2><p class="price">£19<span>/mo</span></p><p>For updates, checks and peace of mind after launch.</p><ul><li>Small text and image changes</li><li>Hosting and uptime checks</li><li>Monthly backup review</li><li>Priority email support</li></ul><a href="/contact/" class="btn">Ask about care</a></article>
+  </div>
+  <p>Copywriting, extra pages, booking systems, ecommerce and bespoke functionality are quoted separately before work begins.</p>
   <p>Social media and ads management: available once we're working together — ask me directly.</p>
 
   <h2>Why <span class="accent">me</span>, not the alternatives?</h2>
-  <table class="compare-table">
+  <div class="compare-scroll"><table class="compare-table">
     <tr><th>&nbsp;</th><th>Virgil Digital</th><th>Traditional agency</th><th>Marketplace freelancer</th></tr>
     <tr><td>Who does the work</td><td class="win">Me, directly — no handoff</td><td>Junior staff, after the sales call</td><td>Varies wildly by listing</td></tr>
     <tr><td>Pricing</td><td class="win">Fixed quote upfront</td><td>Retainers + change orders</td><td>Cheap until revisions pile up</td></tr>
     <tr><td>Communication</td><td class="win">Direct — you call me</td><td>Through an account manager</td><td>Inconsistent, often abroad hours</td></tr>
     <tr><td>Speed</td><td class="win">Live in 1–3 weeks</td><td>Weeks of process before pixels</td><td>Depends on their other gigs</td></tr>
-    <tr><td>Local knowledge</td><td class="win">Bristol-based, South West UK focus</td><td>Rarely local to you</td><td>Usually not local</td></tr>
-  </table>
+    <tr><td>Location</td><td class="win">Bristol-based, works UK-wide</td><td>May be distant or layered</td><td>Varies by freelancer</td></tr>
+  </table></div>
+  <div class="compare-mobile">
+    <article><strong>Who does the work</strong><p><b>Virgil Digital:</b> Me, directly. No handoff.</p><p><b>Agency:</b> Junior staff after the sales call.</p><p><b>Marketplace:</b> Varies by listing.</p></article>
+    <article><strong>Pricing</strong><p><b>Virgil Digital:</b> Fixed quote upfront.</p><p><b>Agency:</b> Retainers and change orders.</p><p><b>Marketplace:</b> Cheap until revisions pile up.</p></article>
+    <article><strong>Communication</strong><p><b>Virgil Digital:</b> Direct contact with the person building your site.</p><p><b>Agency:</b> Through an account manager.</p><p><b>Marketplace:</b> Often inconsistent hours.</p></article>
+    <article><strong>Speed and reach</strong><p><b>Virgil Digital:</b> Bristol-based, works UK-wide, typically live in 1–3 weeks.</p><p><b>Alternatives:</b> Timelines and communication vary.</p></article>
+  </div>
 
   <a href="/contact/" class="btn">Book your free 15-minute audit</a>
 </Layout>
+
+<style>
+  .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0; }
+  .price-card { border:1px solid var(--rule); border-radius:10px; padding:1.5rem; display:flex; flex-direction:column; align-items:flex-start; }
+  .price-card.featured { border:2px solid var(--accent); padding:calc(1.5rem - 1px); box-shadow:0 10px 30px rgba(47,92,255,.1); }
+  .price-card h2 { margin:.2rem 0 .35rem; font-size:1.35rem; } .price { font:700 2.2rem 'Space Grotesk',sans-serif; color:var(--ink); margin-bottom:.5rem; } .price span { font:500 .9rem Inter,sans-serif; color:var(--ink-mute); }
+  .price-card ul { padding-left:1.1rem; margin:1rem 0 1.5rem; } .price-card li { margin:.35rem 0; font-size:.92rem; } .price-card .btn { margin-top:auto; }
+  @media (max-width:760px) { .pricing-grid { grid-template-columns:1fr; } }
+  .compare-scroll { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--rule); border-radius:8px; }
+  .compare-table { min-width:680px; margin:0; }
+  .compare-mobile { display:none; }
+  .compare-mobile article { border:1px solid var(--rule); border-radius:8px; padding:1rem; margin:.75rem 0; background:var(--paper-alt); }
+  .compare-mobile article strong { color:var(--ink); display:block; margin-bottom:.5rem; }
+  .compare-mobile article p { font-size:.9rem; margin:.35rem 0; }
+  @media (max-width:760px) { .compare-scroll { display:none; } .compare-mobile { display:block; } }
+</style>

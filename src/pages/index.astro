@@ -1,34 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Websites, Google presence and marketing for South West UK businesses" description="Get found. Get more customers. Websites and Google presence built by someone who actually answers the phone.">
-  <span class="kicker">South West UK · Websites &amp; Google Presence</span>
-  <h1>Most local businesses lose customers online <span class="accent">before they even compete.</span></h1>
-  <p class="lede">No website, an outdated one, or a Google listing nobody's touched in years — Virgil Digital fixes that. Fixed prices. No agency jargon. You deal with me, directly, start to finish.</p>
-  <a href="/contact/" class="btn">Book your free 15-minute audit</a>
+<Layout title="Websites for small businesses across the UK" description="Fast, conversion-focused websites for small businesses anywhere in the UK. Fixed prices from £399, built and launched by Virgil Digital.">
+  <section class="hero reveal">
+    <div>
+      <span class="kicker">UK-wide · Websites that work</span>
+      <h1>A sharper website for a business people can <span class="accent">trust.</span></h1>
+      <p class="lede">Fast, focused websites for local businesses. Choose a proven design, send over your details, and get a polished site live without agency theatre.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn">Start at £399</a>
+        <a href="/services/" class="text-link">See packages →</a>
+      </div>
+    </div>
+    <div class="hero-preview project-carousel" aria-label="Selected Virgil Digital project previews">
+      <div class="preview-bar"><span></span><span></span><span></span><b>yourbusiness.co.uk</b></div>
+      <div class="preview-slides">
+        <div class="preview-slide is-active"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole project preview" /><div><span class="preview-kicker">ALTERATIONS BY NICOLE · BRISTOL</span><strong>A website that turns trust into enquiries.</strong></div></div>
+        <div class="preview-slide preview-dessert"><img src="/work/marvel-desserts-site.png" alt="Marvel Desserts website preview" loading="eager" /><div><span class="preview-kicker">MARVEL DESSERTS · BRISTOL</span><strong>Desserts, coffee and late nights.</strong><i></i></div></div>
+        <div class="preview-slide preview-guide"><img src="/work/staysafe-guide-site.png" alt="StaySafe Guide website preview" loading="eager" /><div><span class="preview-kicker">STAYSAFE GUIDE · ONLINE SAFETY</span><strong>Clear advice for everyday digital life.</strong><div class="guide-topics"><span>Scams</span><span>Privacy</span><span>Families</span></div><i></i></div></div>
+        <div class="preview-slide preview-mealwright"><img src="/work/mealwright-site.png" alt="Mealwright website preview" loading="eager" /><div><span class="preview-kicker">MEALWRIGHT · MY PRODUCT</span><strong>An Android meal planner with a generator.</strong><i></i></div></div>
+      </div>
+      <div class="preview-controls" aria-label="Project preview controls">
+        <button class="preview-arrow preview-prev" type="button" aria-label="Previous project preview">←</button>
+        <div class="preview-dots">
+          <button type="button" class="is-active" aria-label="Show project preview 1" aria-current="true"></button>
+          <button type="button" aria-label="Show project preview 2"></button>
+          <button type="button" aria-label="Show project preview 3"></button>
+          <button type="button" aria-label="Show project preview 4"></button>
+        </div>
+        <button class="preview-arrow preview-next" type="button" aria-label="Next project preview">→</button>
+      </div>
+    </div>
+  </section>
   <h2 class="sr-only">Why businesses choose Virgil Digital</h2>
 
-  <div class="cards">
-    <div class="card">
+  <div class="cards reveal-group">
+    <div class="card reveal">
       <h3>Fixed pricing</h3>
       <p>You know the cost before we start. No surprise invoices, no "final phase" upsell.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
       <h3>One person, no handoff</h3>
       <p>I build it, I ship it, I answer when you call. No account manager relaying messages to a dev team.</p>
     </div>
-    <div class="card">
+    <div class="card reveal">
       <h3>Built to be found</h3>
       <p>A site and Google listing that actually work together — so people searching for you find you.</p>
     </div>
   </div>
 
   <h2>See it in <span class="accent">action</span></h2>
+  <p>Three proven starting points, adapted to your business rather than churned out unchanged.</p>
+  <div class="template-grid reveal-group">
+    <div class="template-card reveal"><div class="template-screen template-service"><span>01</span><strong>Local service</strong></div><h3>Local service</h3><p>For trades, beauty, health and other appointment-led businesses.</p></div>
+    <div class="template-card reveal"><div class="template-screen template-pro"><span>02</span><strong>Professional</strong></div><h3>Professional</h3><p>For consultants, studios and practices that need clarity and trust.</p></div>
+    <div class="template-card reveal"><div class="template-screen template-retail"><span>03</span><strong>Retail &amp; hospitality</strong></div><h3>Retail &amp; hospitality</h3><p>For places people discover, visit and recommend.</p></div>
+  </div>
+
+  <section class="featured-work reveal">
+    <div class="featured-image"><img src="/work/alterations-by-nicole-site.png" alt="Alterations by Nicole website preview" loading="lazy" /></div>
+    <div class="featured-copy"><span class="kicker">Featured build · Bristol</span><h2>From invisible online to <span class="accent">easy to choose.</span></h2><p>Alterations by Nicole needed a clear way for local customers to understand the service and enquire. I rebuilt the website, aligned the Google presence, and made the next step obvious.</p><a href="https://alterationsbynicole.com" target="_blank" rel="noopener" class="text-link">Read the live project →</a></div>
+  </section>
+
+  <h2>Recent <span class="accent">work</span></h2>
+  <div class="work-grid reveal-group">
+    <a class="work-card" href="https://alterationsbynicole.com" target="_blank" rel="noopener"><img src="/work/alterations-by-nicole.jpg" alt="Alterations by Nicole website preview" loading="lazy" /><span><strong>Alterations by Nicole</strong><small>Tailoring studio · Bristol</small></span><b>View site ↗</b></a>
+    <a class="work-card" href="https://marveldesserts.co.uk" target="_blank" rel="noopener"><div class="dessert-preview"><small>MARVEL DESSERTS</small><strong>Desserts, coffee<br />and late nights.</strong><i></i></div><span><strong>Marvel Desserts</strong><small>Desserts and coffee · Bristol</small></span><b>View site ↗</b></a>
+    <a class="work-card work-card-dark" href="https://staysafeguide.com" target="_blank" rel="noopener"><div class="guide-preview"><small>STAYSAFE GUIDE</small><strong>Practical online safety for everyday life.</strong><i></i></div><span><strong>StaySafe Guide</strong><small>Online safety publication</small></span><b>View site ↗</b></a>
+    <a class="work-card" href="https://mealwright.co.uk" target="_blank" rel="noopener"><img src="/work/mealwright-site.png" alt="Mealwright app website preview" loading="lazy" /><span><strong>Mealwright</strong><small>My Android meal planner and generator</small></span><b>View project ↗</b></a>
+  </div>
   <div class="case-study">
     <span class="kicker">Case study</span>
     <h3>Alterations by Nicole — Bristol</h3>
-    <p>A local tailoring business with no consistent name across Google and no way for customers to enquire online. I rebuilt the site, fixed the name mismatch on their Google listing, and added a working enquiry form. Enquiries have picked up noticeably since.</p>
+    <p>A local tailoring business with no consistent name across Google and no way for customers to enquire online. I rebuilt the site, fixed the name mismatch on their Google listing, and added a working enquiry form.</p>
     <p><a href="https://alterationsbynicole.com" target="_blank" rel="noopener">alterationsbynicole.com →</a></p>
+  </div>
+  <div class="case-study marvel-case">
+    <span class="kicker">Recent project</span>
+    <h3>Marvel Desserts — Bristol</h3>
+    <p>Marvel Desserts had been trading for years without a proper website. I built the site, shaped the information around what customers need to know, and am helping the business regain access to its Google Business Profile after control was left with a previous manager.</p>
+    <p><a href="https://marveldesserts.co.uk" target="_blank" rel="noopener">Visit marveldesserts.co.uk →</a></p>
+  </div>
+  <div class="testimonial">
+    <p>“Huge thanks to Virgil for his guidance and clear explanations throughout the website project. The service was amazing and the price was fair. I couldn’t be happier and would highly recommend him.”</p>
+    <cite>— Naz, Marvel Desserts</cite>
   </div>
 
   <div class="testimonial">
@@ -36,5 +91,97 @@ import Layout from '../layouts/Layout.astro';
     <cite>— Nicole, <a href="https://alterationsbynicole.com" target="_blank" rel="noopener">Alterations by Nicole</a></cite>
   </div>
 
+  <section class="help-strip reveal">
+    <div><span class="kicker">Not sure what you need?</span><h2>Start with the <span class="accent">useful stuff.</span></h2><p>Read how websites work with social media, what SEO actually means, and how a refresh or new build happens.</p></div>
+    <div class="help-links"><a href="/guides/social-media-vs-website/">Social media vs a website <b>→</b></a><a href="/guides/what-is-seo/">What SEO actually means <b>→</b></a><a href="/faq/">Frequently asked questions <b>→</b></a></div>
+  </section>
+
   <a href="/contact/" class="btn">Book your free 15-minute audit</a>
 </Layout>
+
+<style>
+  .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:3rem; align-items:center; margin-bottom:4rem; }
+  .hero-actions { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; }
+  .text-link { font-weight:600; text-decoration:none; }
+  .hero-preview { position:relative; background:#11151f; border-radius:12px; padding:.7rem; box-shadow:0 18px 50px rgba(15,17,21,.16); transform:rotate(1.5deg); animation:float-preview 6s ease-in-out infinite; }
+  .preview-bar { display:flex; align-items:center; gap:.35rem; color:#9da5b5; font: .65rem 'JetBrains Mono', monospace; padding:.25rem .35rem .7rem; }
+  .preview-bar span { width:7px; height:7px; border-radius:50%; background:#596273; } .preview-bar b { margin-left:auto; font-weight:400; }
+  .preview-slides { position:relative; min-height:300px; border-radius:7px; overflow:hidden; } .preview-slide { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; opacity:0; transition:opacity .35s ease; background:linear-gradient(135deg,#edf3ff,#fff 55%); color:var(--ink); } .preview-slide.is-active { opacity:1; } .preview-slide img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.25; filter:saturate(.8); } .preview-slide > div { position:relative; z-index:1; } .preview-kicker { display:block; font: .55rem 'JetBrains Mono',monospace; color:var(--accent); margin-bottom:1.2rem; } .preview-slide strong { display:block; font:700 clamp(1.5rem,3vw,2.4rem)/1.05 'Space Grotesk',sans-serif; max-width:280px; } .preview-slide i { display:block; height:6px; width:36px; background:var(--accent); margin-top:1.5rem; } .preview-dessert { background:#17110f; color:#fff4e8; } .preview-dessert .preview-kicker { color:#f2bd70; } .preview-dessert i { background:#f2bd70; } .preview-guide { background:#12252b; color:#effcf4; } .preview-guide .preview-kicker { color:#7de0ae; } .preview-guide i { background:#7de0ae; } .guide-topics { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.2rem; } .guide-topics span { border:1px solid rgba(125,224,174,.55); border-radius:999px; padding:.25rem .5rem; font: .6rem 'JetBrains Mono',monospace; color:#b8f4cf; }
+  .template-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; }
+  .template-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; background:var(--paper); }
+  .template-card h3,.template-card p { margin-left:1rem; margin-right:1rem; } .template-card h3 { margin-top:1rem; } .template-card p { font-size:.9rem; }
+  .template-screen { height:145px; padding:1rem; display:flex; flex-direction:column; justify-content:space-between; color:#fff; font-family:'Space Grotesk',sans-serif; } .template-screen span { font: .7rem 'JetBrains Mono',monospace; opacity:.75; } .template-screen strong { font-size:1.5rem; } .template-service { background:#2958dc; } .template-pro { background:#18221d; } .template-retail { background:#b64c2e; }
+  .featured-work { display:grid; grid-template-columns:1.1fr .9fr; gap:2.5rem; align-items:center; margin:1rem 0 4rem; padding:1.25rem; background:#11151f; border-radius:12px; color:#fff; } .featured-image { overflow:hidden; border-radius:8px; background:#e8edf5; height:360px; } .featured-image img { width:100%; height:100%; object-fit:cover; object-position:top; } .featured-copy { padding:1.2rem 1.2rem 1.2rem 0; } .featured-copy h2 { color:#fff; margin-top:.2rem; } .featured-copy p { color:#d6dbe5; } .featured-copy .kicker { color:#9eb4ff; } .featured-copy .text-link { color:#fff; }
+  .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; } .work-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; color:var(--ink); text-decoration:none; background:var(--paper); } .work-card img,.guide-preview { display:block; width:100%; height:180px; object-fit:cover; background:var(--paper-alt); } .work-card span { display:block; padding:1rem 1rem .2rem; } .work-card strong,.work-card small { display:block; } .work-card small { color:var(--ink-mute); font-size:.85rem; margin-top:.2rem; } .work-card b { display:block; padding:.7rem 1rem 1rem; color:var(--accent); font-size:.85rem; } .guide-preview { padding:1.4rem; background:#12252b; color:#effcf4; } .guide-preview small { font: .6rem 'JetBrains Mono',monospace; color:#7de0ae; } .guide-preview strong { display:block; font:600 1.35rem/1.1 'Space Grotesk',sans-serif; margin-top:2.5rem; max-width:220px; } .guide-preview i { display:block; width:34px; height:4px; background:#7de0ae; margin-top:1.2rem; }
+  .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0 3rem; } .work-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; color:var(--ink); text-decoration:none; background:var(--paper); } .work-card img,.guide-preview,.dessert-preview { display:block; width:100%; height:180px; object-fit:cover; background:var(--paper-alt); } .work-card span { display:block; padding:1rem 1rem .2rem; } .work-card strong,.work-card small { display:block; } .work-card small { color:var(--ink-mute); font-size:.85rem; margin-top:.2rem; } .work-card b { display:block; padding:.7rem 1rem 1rem; color:var(--accent); font-size:.85rem; } .guide-preview { padding:1.4rem; background:#12252b; color:#effcf4; } .guide-preview small,.dessert-preview small { font: .6rem 'JetBrains Mono',monospace; color:#7de0ae; } .guide-preview strong { display:block; font:600 1.35rem/1.1 'Space Grotesk',sans-serif; margin-top:2.5rem; max-width:220px; } .guide-preview i,.dessert-preview i { display:block; width:34px; height:4px; background:#7de0ae; margin-top:1.2rem; } .dessert-preview { padding:1.4rem; background:#17110f; color:#fff4e8; } .dessert-preview small { color:#f2bd70; } .dessert-preview strong { display:block; font:600 1.35rem/1.1 'Space Grotesk',sans-serif; margin-top:2.5rem; max-width:220px; } .dessert-preview i { background:#f2bd70; }
+  @media (max-width:720px) { .hero { grid-template-columns:1fr; gap:2rem; } .hero-preview { transform:none; } .template-grid,.work-grid { grid-template-columns:1fr; } .template-screen { height:120px; } .featured-work { grid-template-columns:1fr; gap:1.2rem; padding:.8rem; } .featured-image { height:300px; } .featured-copy { padding:.5rem .5rem 1rem; } }
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible { opacity:1; transform:translateY(0); }
+  .reveal-group .reveal:nth-child(2) { transition-delay:.1s; } .reveal-group .reveal:nth-child(3) { transition-delay:.2s; }
+  .template-card,.work-card { transition:transform .25s ease, box-shadow .25s ease; } .template-card:hover,.work-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(15,17,21,.1); }
+  @keyframes float-preview { 0%,100% { transform:rotate(1.5deg) translateY(0); } 50% { transform:rotate(1.5deg) translateY(-8px); } }
+  @keyframes carousel-progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  /* Keep the work legible: the screenshot is the hero, the label sits below it. */
+  .preview-slide { display:block; padding:0; transition:opacity .65s ease; }
+  .preview-slide img { position:relative; display:block; height:218px; opacity:1; filter:none; object-fit:contain; object-position:center; background:#f4f5f7; }
+  .preview-slide > div { padding:1rem 1.25rem 1.15rem; background:#fff; color:var(--ink); min-height:118px; }
+  .preview-slide strong { font-size:1.25rem; }
+  .preview-slide .preview-kicker { margin-bottom:.65rem; }
+  .preview-dessert > div { background:#17110f; color:#fff4e8; }
+  .preview-guide > div { background:#12252b; color:#effcf4; }
+  .preview-mealwright > div { background:#fbf7ef; color:#2c211d; }
+  .preview-mealwright .preview-kicker { color:var(--accent-warm); }
+  .preview-mealwright i { background:var(--accent-warm); }
+  .preview-controls { display:flex; align-items:center; justify-content:center; gap:.75rem; padding:.55rem 0 .05rem; }
+  .preview-dots { display:flex; justify-content:center; gap:.4rem; }
+  .preview-dots button { width:8px; height:8px; border:0; border-radius:50%; padding:0; background:#596273; cursor:pointer; }
+  .preview-dots button.is-active { background:#fff; }
+  .preview-dots button:focus-visible,.preview-arrow:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+  .preview-arrow { width:28px; height:28px; border:1px solid #596273; border-radius:50%; background:transparent; color:#fff; cursor:pointer; line-height:1; }
+  .preview-arrow:hover { border-color:#fff; }
+  .hero-actions .btn { background:var(--accent-warm); }
+  .hero-actions .btn:hover { background:var(--ink); }
+  .featured-work { border-top:4px solid var(--accent-mint); }
+  .help-strip { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; margin:3rem 0; padding:2rem; border-radius:10px; background:#eef7f3; } .help-strip h2 { margin:.2rem 0 .5rem; } .help-strip p { margin-bottom:0; } .help-links a { display:flex; justify-content:space-between; gap:1rem; padding:.8rem 0; border-bottom:1px solid rgba(15,17,21,.14); color:var(--ink); text-decoration:none; font-weight:600; } .help-links a:first-child { border-top:1px solid rgba(15,17,21,.14); } .help-links b { color:var(--accent-mint); }
+  @media (max-width:720px) { .help-strip { grid-template-columns:1fr; padding:1.25rem; } }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .hero-preview { animation:none; } .template-card,.work-card { transition:none; } }
+</style>
+
+<script>
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
+</script>
+
+<script>
+  const slides = document.querySelectorAll('.preview-slide');
+  const dots = document.querySelectorAll('.preview-dots button');
+  const carousel = document.querySelector('.project-carousel');
+  const previous = document.querySelector('.preview-prev');
+  const next = document.querySelector('.preview-next');
+  let activeSlide = 0;
+  const showSlide = (index) => {
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeSlide));
+    dots.forEach((dot, dotIndex) => { dot.classList.toggle('is-active', dotIndex === activeSlide); dot.setAttribute('aria-current', dotIndex === activeSlide ? 'true' : 'false'); });
+  };
+  previous?.addEventListener('click', () => showSlide(activeSlide - 1));
+  next?.addEventListener('click', () => showSlide(activeSlide + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+  let timer;
+  const start = () => { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => showSlide(activeSlide + 1), 2800); };
+  const stop = () => { if (timer) window.clearInterval(timer); };
+  carousel?.addEventListener('mouseenter', stop); carousel?.addEventListener('mouseleave', start); carousel?.addEventListener('focusin', stop); carousel?.addEventListener('focusout', (event) => { if (!carousel.contains(event.relatedTarget as Node)) start(); });
+  start();
+</script>

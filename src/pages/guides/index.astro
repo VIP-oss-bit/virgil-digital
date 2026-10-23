@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Guides for small businesses | Virgil Digital" description="Practical guides on websites, social media, SEO, and getting found online as a small business.">
+  <span class="kicker">Guides</span><h1>Make better decisions <span class="accent">online.</span></h1>
+  <p class="lede">Straightforward explanations for business owners who want to understand what their website, social channels, and Google presence are actually doing.</p>
+  <div class="guide-list"><a href="/guides/social-media-vs-website/"><strong>Social media is not your website</strong><span>How Facebook, Instagram, TikTok and other platforms work alongside an owned website.</span>Read the guide →</a><a href="/guides/what-is-seo/"><strong>What SEO actually means</strong><span>How search engines understand pages and why useful, trustworthy information matters.</span>Read the guide →</a></div>
+</Layout>
+
+<style>
+  .guide-list { display:grid; gap:1rem; margin:2rem 0; } .guide-list a { display:block; border:1px solid var(--rule); border-radius:10px; padding:1.4rem; color:var(--ink); text-decoration:none; } .guide-list a:hover { border-color:var(--accent); } .guide-list strong,.guide-list span { display:block; } .guide-list strong { font:600 1.25rem 'Space Grotesk',sans-serif; } .guide-list span { margin:.5rem 0; color:var(--ink-soft); }
+</style>

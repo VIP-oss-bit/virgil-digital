@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const projects = [
+  { name: 'Alterations by Nicole', type: 'Client website · Bristol', image: '/work/alterations-by-nicole-site.png', href: '/work/alterations-by-nicole/' },
+  { name: 'Marvel Desserts', type: 'Client website · Bristol', image: '/work/marvel-desserts-site.png', href: '/work/marvel-desserts/' },
+  { name: 'StaySafe Guide', type: 'Own publication · Online safety', image: '/work/staysafe-guide-site.png', href: '/work/staysafe-guide/' },
+  { name: 'Mealwright', type: 'Own product · Android app', image: '/work/mealwright-site.png', href: '/work/mealwright/' },
+];
+---
+<Layout title="Work | Virgil Digital" description="Websites and digital products built by Virgil Digital for clients across the UK.">
+  <span class="kicker">Selected work</span>
+  <h1>Useful work, <span class="accent">built properly.</span></h1>
+  <p class="lede">A mix of client websites and products I am building myself. Each project starts with a real problem, not a template demo.</p>
+  <div class="work-grid">
+    {projects.map((project) => <a class="work-card" href={project.href}><img src={project.image} alt={`${project.name} project preview`} loading="lazy" /><span><strong>{project.name}</strong><small>{project.type}</small></span><b>Read the case study →</b></a>)}
+  </div>
+  <a href="/contact/" class="btn">Discuss your project</a>
+</Layout>
+
+<style>
+  .work-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin:2rem 0 3rem; }
+  .work-card { border:1px solid var(--rule); border-radius:10px; overflow:hidden; color:var(--ink); text-decoration:none; background:var(--paper); transition:transform .25s ease, box-shadow .25s ease; }
+  .work-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(15,17,21,.1); }
+  .work-card img { display:block; width:100%; height:260px; object-fit:cover; object-position:top; background:var(--paper-alt); }
+  .work-card span { display:block; padding:1rem 1rem .2rem; } .work-card strong,.work-card small { display:block; } .work-card small { color:var(--ink-mute); font-size:.85rem; margin-top:.2rem; } .work-card b { display:block; padding:.7rem 1rem 1rem; color:var(--accent); font-size:.85rem; }
+  @media (max-width:680px) { .work-grid { grid-template-columns:1fr; } }
+</style>
